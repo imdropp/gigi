@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gigi </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(
+                to right, 
+                black 0%, 
+                black 5%,    
+                white 5%, 
+                white 95%,    
+                black 95%, 
+                black 100%
+            );
+            margin: 0;
+            padding: 0;
+        }
+
+        header h1, header h2 {
+            margin: 10px 0;
+        }
+
+        #botao1 {
+            padding: 12px 20px;
+            background-color: hotpink;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #botao2 {
+            padding: 12px 20px;
+            background-color: hotpink;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+
+        }
+
+         #mensagem {
+            font-size: 30px;
+            color: rgb(110, 5, 84);
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s; /* efeito suave */
+            padding: 100px;
+
+        }
+        #mensagem {
+  white-space: pre-line;
+        }
+        #jimi {
+        position: absolute;
+        top: 100px;   /* distância do topo */
+        left: 200px;  /* distância da esquerda */
+        width: 200px;
+        border: 6px solid rgb(188, 8, 224); 
+        opacity: 0;
+        transition: opacity 1s;
+        }
+        #JIMIZINHO {
+        position: absolute;
+        top: 50px;   /* distância do topo */
+        left: 200px;  /* distância da esquerda */
+        width: 200px;
+        border: 6px solid rgb(188, 8, 224);
+        opacity: 0;
+        transition: opacity 1s;
+
+        }
+        
+        #jannis {
+        position: absolute;
+        top: 100px;   /* distância do topo */
+        left: 1100px;  /* distância da esquerda */
+        width: 200px;
+        border: 6px solid rgb(188, 8, 224);
+        opacity: 0;
+        transition: opacity 1s;
+        }
+        #jannizinha {
+        position: absolute;
+        top: 55px;   /* distância do topo */
+        left: 1100px;  /* distância da esquerda */
+        width: 200px;
+        border: 6px solid rgb(188, 8, 224); 
+        opacity: 0;
+        transition: opacity 1s;
+        }
+
+        #fotos {
+            margin-top: 20px;
+        }
+
+        .foto {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            opacity: 0; /* começa invisível */
+            transition: opacity 1s; /* fade-in suave */
+        }
+        #texto3 {
+            font-size: 32px;
+            color: blueviolet;
+            }
+    </style>
+</head>
+<body>
+    <img id=jimi src="imagens/jimi.png" alt="">
+    <img id=jannis src="imagens/jannis.png" alt="">
+<header>
+    <br>
+    <br>
+    <br>
+    <h1>oi gigi</h1>
+    <h2>eh seu presentinho do dia das mães :3</h2>
+    <h3 id="texto3">clica aqui embaixo mae </h3>
+    <h4 id="JIMIZINHO">JIMIZINHO</h4>
+    <h5 id="jannizinha">JANIZINHA</h5>
+</header>
+<button2 id="botao2" onclick="clicou()">Clica ni eu tambem </button2> 
+<div id="mensagem"></div>
+<div id="mensagem2"></div>
+<div id="fotos"></div> <!-- aqui vão as fotos -->
+
+<script>
+function clicou() {
+    // 1️⃣ Mostrar a mensagem
+    const msg = document.getElementById("mensagem");
+    msg.textContent =
+     "gigi, eu amo muito voce, vc eh uma ótima mae pra mim, e msm com as discussões que a gnt tem as vzes, eu teamo muito e sei que vc só quer meu bem e que vc se importa mt cmg, eute amo muito e tenho muito orgulho da sua loja e de tudo que voce construiu com ela, parabens mae, vc eh um orgulho, esse eh seu presentinho, pd nn ser muita coisa mas eh oq eu consegui fazer com oq eu sei de programação, teamo \n olha essas imagens da mulher que eu mais aprecio, mais acho linda, mais aprecio e mais amo <3"
+
+    // efeito fade-in
+    setTimeout(() => { msg.style.opacity = 1; }, 50);
+
+    console.log("O botão foi clicado! 💞");
+
+    // 2️⃣ Mudar o botão de cor e texto
+    const botao = document.getElementById("botao2");
+    botao.textContent = "Clicado 💕";
+    botao.style.backgroundColor = "deeppink";
+
+    // 3️⃣ Mostrar fotos da gigi e au au
+    const JIMIZINHO = document.getElementById("JIMIZINHO")
+    const jannizinha = document.getElementById("jannizinha")
+    const jimi = document.getElementById("jimi");
+    const jannis = document.getElementById("jannis");
+    const fotosDiv = document.getElementById("fotos");
+    const fotos = [
+      "imagens/a.png", "imagens/b.jpeg", "imagens/c.png", "imagens/d.png", "imagens/e.png", "imagens/f.png", "imagens/g.png", "imagens/h.png"
+    ]; 
+
+    fotos.forEach((src, index) => {
+        setTimeout(() => {
+            const img = document.createElement("img"); // cria a imagem
+            img.src = src;                             // define o caminho
+            img.className = "foto";                    // aplica o estilo
+            fotosDiv.appendChild(img);                 // adiciona na página
+            jimi.style.opacity = 1;
+            jannis.style.opacity = 1;
+            jannizinha.style.opacity = 1;
+            JIMIZINHO.style.opacity = 1;
+
+            // faz aparecer devagar
+            setTimeout(() => { img.style.opacity = 1; }, 50);
+        }, index * 500); // cada foto aparece com 0,5s de diferença
+    });
+}
+</script>
+
+</body>
+</html>
